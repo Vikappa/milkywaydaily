@@ -1,0 +1,28 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+
+$custom-colors: (
+  "MWDColor1": #0E1218,
+  "MWDColor2": #20242B,
+  "MWDColor3": #33373E,
+  "MWDColor4": #464A51,
+  "MWDColor5": #595D64,
+  "MWDColor6": #6C7077,
+  "MWDColor7": #80848B,
+  "MWDColor8": #93979D,
+  "MWDColor9": #A6ABAF,
+  "MWDColor10": #B9BDCA,
+  "MWDColor11": #CCD0D6,
+  "SMWDTheme1": #5198FE,
+  "SMWDTheme2": #5b90fd,
+  "SMWDTheme3": #6589fc,
+  "SMWDTheme4": #7081fb,
+  "SMWDTheme5": #7a79fa,
+  "SMWDTheme6": #8472f9,
+  "SMWDTheme7": #8E6AF8,
+  "SMWDTheme8": #996DF5,
+  "SMWDTheme9": #AC6EF0,
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+@import '~bootstrap/scss/bootstrap';
