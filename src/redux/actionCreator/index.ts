@@ -1,1 +1,0 @@
-export const LOADED_ARRAY:string = "LOADED_ARRAY"; 
