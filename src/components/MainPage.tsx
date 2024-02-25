@@ -31,7 +31,7 @@ function MainPage() {
             </div>
                 <Routes>
                 <Route path='/' element={<DashBoard/>} />
-                <Route path='/report/:reportID' element={<ReportPage/>} />
+                <Route path='/report/:reportId' element={<ReportPage/>} />
                 </Routes>
         </div>
     )
