@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { useSelector } from "react-redux"
 import { RootState, reportWelcome, reportResult } from "../redux/typos/actionNames"
+import { Spinner } from "react-bootstrap"
 
 const ReportPage = () => {
 
@@ -18,7 +19,23 @@ const ReportPage = () => {
 
     return(
         <>
-        <h1 style={{color:"white"}}>{currentReport?currentReport.title: "Caricamento" }</h1>
+        <h1 
+        style={
+            {color:"white",
+            margin:"0",
+            padding:"1rem"
+            }}>{currentReport?currentReport.title: "Caricamento" }</h1>
+
+            {currentReport? <div className="d-flex flex-column">
+            {/* <p>{currentReport.updated_at}</p> */}
+            <img src={currentReport.image_url} alt="Report image"/>
+            <p
+            className=""
+            style={{
+                color:"white",
+                margin:"5px",
+            }}
+            >{currentReport.summary}</p></div>: <div className="d-flex flex-column" ><Spinner/></div>}
         </>
     )
 }
