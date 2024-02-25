@@ -2,6 +2,9 @@ import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { FETCH_REPORTS_SUCCESS, FETCH_INFO_SUCCESS, FETCH_BLOG_SUCCESS, FETCH_ARTICLES_SUCCESS} from '../redux/typos/actionNames'
 import ReportBar from './subComponents/ReportBar.tsx'
+import { Route, Routes } from 'react-router-dom'
+import DashBoard from './DashBoard.tsx'
+import ReportPage from './ReportPage.tsx'
 
 function MainPage() {
     const dispatch = useDispatch()
@@ -26,6 +29,10 @@ function MainPage() {
             <div className='d-flex'>
                 <ReportBar/>
             </div>
+                <Routes>
+                <Route path='/' element={<DashBoard/>} />
+                <Route path='/report/:reportID' element={<ReportPage/>} />
+                </Routes>
         </div>
     )
 }
