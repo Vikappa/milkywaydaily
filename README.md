@@ -23,3 +23,4 @@
 
 ## Tecnologie Usate
 
+-Fast-Marquee

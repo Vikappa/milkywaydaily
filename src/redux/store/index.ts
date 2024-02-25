@@ -5,14 +5,16 @@ import { articlesReducer } from "../reducers/ArticlesReducer"
 import { blogReducer } from "../reducers/BlogsReducer"
 
 const mainReducer = combineReducers({
-reportArray:  reportReducer,
-infoArray:  infoReducer,
-articlesArray : articlesReducer,
-blogsArray : blogReducer
-})
-
-const store = configureStore({
-    reducer: mainReducer
-})
-
-export default store
+    reportArray: reportReducer,
+    infoArray: infoReducer,
+    articlesArray: articlesReducer,
+    blogsArray: blogReducer,
+  })
+  
+  const store = configureStore({
+    reducer: mainReducer,
+  })
+  
+  export type RootState = ReturnType<typeof mainReducer>
+    
+  export default store

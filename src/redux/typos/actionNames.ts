@@ -4,6 +4,21 @@ export const FETCH_ARTICLES_SUCCESS = 'FETCH_ARTICLES_SUCCESS'
 export const FETCH_INFO_SUCCESS = 'FETCH_INFO_SUCCESS'
 export const FETCH_BLOG_SUCCESS = 'FETCH_BLOG_SUCCESS'
 
+export interface RootState {
+    reportArray: {
+      results: reportWelcome
+    }
+    infoArray: {
+      details: infoWelCome
+    }
+    articlesArray: {
+      articles: articleWelcome
+    }
+    blogsArray: {
+      blogs: blogWelcome
+    }
+  }
+
 export interface infoWelCome {
     version:    string;
     news_sites: string[];

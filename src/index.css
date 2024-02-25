@@ -42,3 +42,37 @@ body{
   width: 100%; 
   z-index: 1; 
 }
+
+.rfm-marquee{
+  padding: 0 !important;
+  margin: 0 0 1px 0 !important;
+}
+
+.reportPreviewPill{
+  text-decoration: none;
+  color: white;
+  border: 1px solid white;
+  padding: 1px 2.5vw 2px 2.5vw;
+  border-radius: 15px;
+  margin: 0 3vw 0 1vw;
+}
+
+@media screen and (min-width: 540px) {
+  .reportPreviewPill{
+    padding: 1px 2.5vw 1px 2.5vw;
+    margin: 0 1vw 0 1vw;
+  }
+}
+
+
+@media screen and (min-width: 796px) {
+  .reportPreviewPill{
+    padding: 1px 1vw 1px 1vw;
+    margin: 0 0 0 5px;
+  }
+
+  .rfm-marquee{
+    padding: 1px 0 1px 0 !important;
+    margin: 0 0 1px 0 !important;
+  }
+}
