@@ -52,9 +52,22 @@ body{
   text-decoration: none;
   color: white;
   border: 1px solid white;
-  padding: 1px 2.5vw 2px 2.5vw;
+  padding: 1px 2.5vw 1px 2.5vw;
   border-radius: 15px;
   margin: 0 3vw 0 1vw;
+  transition: all 0.25s ease;
+}
+
+.reportPreviewPill:hover{
+  background-color: white;
+  color: var(--bs-SMWDTheme1);
+  border: 1px solid var(--bs-SMWDTheme1);
+}
+
+.reportPreviewPill:active{
+  background-color: var(--bs-SMWDTheme9);
+  color: white;
+  border: 1px solid white;
 }
 
 @media screen and (min-width: 540px) {
@@ -73,6 +86,6 @@ body{
 
   .rfm-marquee{
     padding: 1px 0 1px 0 !important;
-    margin: 0 0 1px 0 !important;
+    margin: 0 0 0 0 !important;
   }
 }

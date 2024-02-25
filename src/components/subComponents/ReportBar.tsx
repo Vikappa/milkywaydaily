@@ -10,7 +10,7 @@ const ReportBar = () => {
 
     return (
         <div className='d-flex flex-column' style={{width: "100%"}}>
-            <p style={{color: "white", fontSize: "0.7rem", margin: "0"}}>Reports:</p>
+            <p style={{color: "white", fontSize: "0.7rem", margin: "0 0 0 5px"}}>Last Reports:</p>
             <div
                 style={{
                     borderTop: '1px solid white',

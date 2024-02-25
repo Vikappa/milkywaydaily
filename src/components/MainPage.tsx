@@ -24,7 +24,7 @@ function MainPage() {
     return (
         <div className='d-flex flex-column'>
             <div className='d-flex'>
-                <ReportBar></ReportBar>
+                <ReportBar/>
             </div>
         </div>
     )
