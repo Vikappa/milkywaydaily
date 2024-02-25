@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { FETCH_REPORTS_SUCCESS, FETCH_INFO_SUCCESS, FETCH_BLOG_SUCCESS, FETCH_ARTICLES_SUCCESS, blogWelcome, infoWelCome, reportWelcome, articleWelcome } from '../redux/typos/actionNames'
+import { FETCH_REPORTS_SUCCESS, FETCH_INFO_SUCCESS, FETCH_BLOG_SUCCESS, FETCH_ARTICLES_SUCCESS} from '../redux/typos/actionNames'
 import ReportBar from './subComponents/ReportBar.tsx'
 
 function MainPage() {
