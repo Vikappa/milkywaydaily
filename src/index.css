@@ -10,7 +10,7 @@ background-clip: border-box;
 
 body{
   margin: 0;
-  padding: 0;
+  padding: 0 0 5rem 0;
   background-color: transparent;
 }
 
@@ -96,4 +96,8 @@ body{
     width: 50%;
   }
   
+}
+
+.linkToNewsSite:hover{
+  color: var(--bs-SMWDTheme9) !important;
 }

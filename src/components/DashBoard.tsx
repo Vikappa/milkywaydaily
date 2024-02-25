@@ -5,6 +5,7 @@ const  DashBoard = function(){
         <h1
         style={{
             color: "white",
+            margin: "1rem",
         }}
         >DashBoard</h1>
         </>
