@@ -16,8 +16,8 @@ const ReportPreview: React.FC<ReportPreviewProps> = (props) => {
       margin:"0"
     }}
     >
-      <a className="reportPreviewPill"
-      >{props.report.title}</a>
+      <p className="reportPreviewPill"
+      >{props.report.title}</p>
     </Link>
   );
 }

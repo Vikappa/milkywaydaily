@@ -1,21 +1,11 @@
 import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { FETCH_REPORTS_SUCCESS, FETCH_INFO_SUCCESS, FETCH_BLOG_SUCCESS, FETCH_ARTICLES_SUCCESS, blogWelcome, infoWelCome, reportWelcome, articleWelcome } from '../redux/typos/actionNames'
 import ReportBar from './subComponents/ReportBar.tsx'
 
 function MainPage() {
-    const dispatch = useDispatch();
-
-    const info = useSelector((state: infoWelCome) => state.infoArray)
-    const articles = useSelector((state: articleWelcome) => state.articlesArray)
-    const blogs = useSelector((state: blogWelcome) => state.blogsArray)
-
-
-    interface InfoProps {
-        infoWelcome: typeof info
-      }
+    const dispatch = useDispatch()
       
-
     useEffect(() => {
         fetch(`https://api.spaceflightnewsapi.net/v4/reports/`)
             .then(response => response.json())

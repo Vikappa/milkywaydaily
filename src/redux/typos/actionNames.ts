@@ -72,6 +72,7 @@ export interface Launch {
 }
 
 export interface reportWelcome {
+    [x: string]: any
     count:    number;
     next:     string;
     previous: null;

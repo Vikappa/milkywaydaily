@@ -5,8 +5,8 @@ import ReportPreview from './ReportPreview'
 
 
 const ReportBar = () => {
-    const reports:reportWelcome = useSelector((state: RootState) => state.reportArray.results)
 
+    const reports:reportWelcome = useSelector((state: RootState) => state.reportArray.results)
 
     return (
         <div className='d-flex flex-column' style={{width: "100%"}}>
@@ -26,8 +26,8 @@ const ReportBar = () => {
                 </Marquee>
             </div>
         </div>
-    );
-};
+    )
+}
 
 export default ReportBar
 
