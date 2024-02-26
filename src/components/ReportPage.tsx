@@ -16,13 +16,7 @@ const ReportPage = () => {
           setCurrentReport(foundReport || null)
         }
       }, [reportId, reports])
-
-
-      useEffect(() => {
-console.log(currentReport)
-      }, [currentReport])
       
-
     return(
         <>
         <h1 

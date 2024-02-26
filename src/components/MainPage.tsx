@@ -8,6 +8,8 @@ import ReportPage from './ReportPage.tsx'
 
 function MainPage() {
     const dispatch = useDispatch()
+
+
       
     useEffect(() => {
         fetch(`https://api.spaceflightnewsapi.net/v4/reports/`)
@@ -25,13 +27,12 @@ function MainPage() {
     }, [dispatch])
 
     return (
-        <div className='d-flex flex-column'>
-            <div className='d-flex'>
+        <div className='d-flex flex-column align-items-center'>
                 <ReportBar/>
-            </div>
                 <Routes>
                 <Route path='/' element={<DashBoard/>} />
-                <Route path='/report/:reportId' element={<ReportPage/>} />
+                <Route path='/report/:reportId' element={<ReportPage/>} 
+                />
                 </Routes>
         </div>
     )
