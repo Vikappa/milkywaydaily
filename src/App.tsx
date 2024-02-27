@@ -5,6 +5,9 @@ import Footer from './components/Footer'
 import { useEffect } from 'react'
 import { useDispatch } from './redux/store/hooks'
 import { fetchReports } from './redux/reducers/reportReducer'
+import { fetchArticles } from './redux/reducers/articleReducer'
+import { fetchBlogs } from './redux/reducers/blogReducer'
+import { fetchInfo } from './redux/reducers/infoReducer'
 
 
 
@@ -13,6 +16,9 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchReports())
+    dispatch(fetchArticles())
+    dispatch(fetchBlogs())
+    dispatch(fetchInfo())
   }, [dispatch])
   
 

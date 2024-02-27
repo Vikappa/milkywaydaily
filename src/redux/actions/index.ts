@@ -28,3 +28,55 @@ export interface reportResult {
     published_at: string;
     updated_at:   string;
 }
+
+export interface infoWelcome {
+    version:    string;
+    news_sites: string[];
+}
+
+export interface articleWelcome {
+    count:    number;
+    next:     string;
+    previous: string;
+    results:  articleResult[];
+}
+
+export interface articleResult {
+    id:           number;
+    title:        string;
+    url:          string;
+    image_url:    string;
+    news_site:    string;
+    summary:      string;
+    published_at: string;
+    updated_at:   string;
+    featured:     boolean;
+    launches:     Launch[];
+    events:       any[];
+}
+
+export interface Launch {
+    launch_id: string;
+    provider:  string;
+}
+
+export interface blogWelcome {
+    count:    number;
+    next:     string;
+    previous: string;
+    results:  blogResult[];
+}
+
+export interface blogResult {
+    id:           number;
+    title:        string;
+    url:          string;
+    image_url:    string;
+    news_site:    string;
+    summary:      string;
+    published_at: string;
+    updated_at:   string;
+    featured:     boolean;
+    launches:     any[];
+    events:       any[];
+}
