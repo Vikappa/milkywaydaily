@@ -22,6 +22,7 @@ const initialState: infoWelcome = {
             console.log("Attesa risposta fetch info")
         })
         .addCase(fetchInfo.fulfilled, (state, action: PayloadAction<infoWelcome>) => {
+          console.log("Fetch info success")
           return action.payload
         })
         .addCase(fetchInfo.rejected, () => {

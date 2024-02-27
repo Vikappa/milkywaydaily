@@ -24,6 +24,7 @@ const initialState: articleWelcome = {
             console.log("Attesa risposta fetch article")
         })
         .addCase(fetchArticles.fulfilled, (state, action: PayloadAction<articleWelcome>) => {
+          console.log("Fetch article success")
           return action.payload
         })
         .addCase(fetchArticles.rejected, () => {

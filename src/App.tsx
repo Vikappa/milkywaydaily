@@ -2,6 +2,7 @@ import { BrowserRouter } from 'react-router-dom'
 import './App.css'
 import NavBar from './components/NavBar'
 import Footer from './components/Footer'
+import ReportMarque from './components/subComponents/ReportMarque'
 import { useEffect } from 'react'
 import { useDispatch } from './redux/store/hooks'
 import { fetchReports } from './redux/reducers/reportReducer'
@@ -26,6 +27,7 @@ function App() {
     
     <BrowserRouter>
     <NavBar/>
+    <ReportMarque/>
     <Footer/>
     </BrowserRouter>
     
