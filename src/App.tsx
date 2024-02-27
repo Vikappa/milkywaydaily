@@ -3,8 +3,10 @@ import './App.css'
 import NavBar from './components/NavBar'
 import Footer from './components/Footer'
 import { useEffect } from 'react'
+import { useDispatch } from './redux/store/hooks'
 import { fetchReports } from './redux/reducers/reportReducer'
-import { useDispatch } from 'react-redux'
+
+
 
 function App() {
   const dispatch = useDispatch()

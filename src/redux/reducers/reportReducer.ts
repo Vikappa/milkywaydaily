@@ -1,59 +1,35 @@
-import { FETCH_REPORTS, FETCH_REPORTS_SUCCESS, FETCH_REPORTS_FAILURE } from '../typos'
-import { Dispatch } from 'redux'
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit"
+import { reportWelcome } from "../actions"
 
-const initialState = {
-  reportData: null,
-}
-
-interface FetchReportsAction {
-    type: typeof FETCH_REPORTS
+const initialState: reportWelcome = {
+    count: 0,
+    next: "",
+    previous: "",
+    results: [],
   }
+
+  export const fetchReports = createAsyncThunk('reports/fetchReports', async () => {
+    const response = await fetch(`https://api.spaceflightnewsapi.net/v4/reports/`)
+    const data = await response.json();
+    return data;
+  });
   
-  interface FetchReportsSuccessAction {
-    type: typeof FETCH_REPORTS_SUCCESS;
-    payload: any
-  }
+  const reportSlice = createSlice({
+    name: 'reports',
+    initialState,
+    reducers: {},
+    extraReducers: (builder) => {
+      builder
+        .addCase(fetchReports.pending, () => {
+            console.log("Attesa risposta fetch reports")
+        })
+        .addCase(fetchReports.fulfilled, (state, action: PayloadAction<reportWelcome>) => {
+          return action.payload
+        })
+        .addCase(fetchReports.rejected, () => {
+            console.log("Errore fetch report")
+        })
+    },
+  })
   
-  interface FetchReportsFailureAction {
-    type: typeof FETCH_REPORTS_FAILURE;
-    payload: Error
-  }
-
-  type ReportActionTypes = FetchReportsAction | FetchReportsSuccessAction | FetchReportsFailureAction;
-
-
-export const fetchReports = () => {
-    return async (dispatch: Dispatch<ReportActionTypes>) => {
-      dispatch({ type: FETCH_REPORTS })
-      try {
-        const response = await fetch(`https://api.spaceflightnewsapi.net/v3/reports`)
-        const data = await response.json()
-        dispatch({ type: FETCH_REPORTS_SUCCESS, payload: data })
-      } catch (error) {
-        console.error(error)
-        dispatch({ type: FETCH_REPORTS_FAILURE, payload: error })
-      }
-    }
-  }
-  
-
-
-const reportReducer = (state = initialState, action: any) => {
-    switch (action.type) {
-        case FETCH_REPORTS_SUCCESS:
-            return {
-                ...state,
-                reportData: action.payload,
-            }
-        case FETCH_REPORTS_FAILURE:
-            return {
-                ...state,
-                reportData: null,
-            }
-        default:
-            return state
-    }
-};
-
-
-export default reportReducer
+  export default reportSlice.reducer
