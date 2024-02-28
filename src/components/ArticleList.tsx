@@ -61,9 +61,9 @@ const ArticleList = function () {
                         <p style={{ color: "white", margin: "0 0 0 5px" }} >Read more</p>
                         <div className="d-flex gap-3 mx-2">
                             {currentWelcome && <i onClick={fetchPreviousArticles}
-                                style={{ color: currentWelcome.previous ? "white" : "grey", fontSize: "1.4rem" }} className="bi bi-arrow-left-circle-fill"></i>}
+                                style={{ cursor:"pointer", color: currentWelcome.previous ? "white" : "grey", fontSize: "1.4rem" }} className="bi bi-arrow-left-circle-fill"></i>}
                             {currentWelcome && <i onClick={fetchNextArticles}
-                                style={{ color: currentWelcome.next ? "white" : "grey", fontSize: "1.4rem" }} className="bi bi-arrow-right-circle-fill"></i>}
+                                style={{ cursor:"pointer", color: currentWelcome.next ? "white" : "grey", fontSize: "1.4rem" }} className="bi bi-arrow-right-circle-fill"></i>}
                         </div>
                     </div>
                 </div>

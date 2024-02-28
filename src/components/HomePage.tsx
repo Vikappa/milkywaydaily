@@ -1,14 +1,33 @@
 import { RootState } from "../redux/store/index"
 import { useSelector } from "react-redux"
-import { articleResult } from "../redux/actions"
+import { articleResult, blogResult, blogWelcome } from "../redux/actions"
 import { Spinner } from "react-bootstrap"
 import { Link } from "react-router-dom"
 import ArticleList from './ArticleList'
+import { useEffect, useState } from "react"
 
 const HomePage = function HomePage() {
 
     const lastArticle: articleResult = useSelector((state: RootState) => state.articles.results[0])
     const articles: articleResult[] = useSelector((state: RootState) => state.articles.results)
+    const blogs: blogResult[] = useSelector((state: RootState) => state.blogs.results)
+    const [blogsToRender, setBlogsToRender] = useState<blogResult[]>([])
+    const blogWelcome: blogWelcome = useSelector((state: RootState) => state.blogs)
+    const [currentBlogWelcome, setCurrentBlogWelcome] = useState<blogWelcome | null>(null)
+
+    useEffect(() => {
+        setCurrentBlogWelcome(blogWelcome)
+        setBlogsToRender(blogWelcome.results)
+    }, [blogs, currentBlogWelcome])
+
+
+    const fetchPreviousBlog = async () => {
+        console.log()
+    }
+    
+    const fetchNextBlogs = async () => {
+        console.log()
+    }
 
     return(
         <>
@@ -38,9 +57,38 @@ const HomePage = function HomePage() {
     
     : <div className="p-5 m-5"><Spinner style={{color:"white"}} className="p-3"/></div>}
     
-    {}
+    {blogs?
 
+    <div>
+        <div style={{color:"white", border:"1px solid white", borderRadius:"10px", margin:"1rem", padding:"0.3rem"}} className="d-flex align-items-center justify-content-between">        
+            <h3 >Blogs</h3>
+            <div className="d-flex gap-2 mx-2">
+            {currentBlogWelcome && <i onClick={fetchPreviousBlog}
+                style={{ cursor:"pointer", color: currentBlogWelcome.previous ? "white" : "grey", fontSize: "1.4rem" }} className="bi bi-arrow-left-circle-fill"></i>}
+            {currentBlogWelcome && <i onClick={fetchNextBlogs}
+                style={{ cursor:"pointer", color: currentBlogWelcome.next ? "white" : "grey", fontSize: "1.4rem" }} className="bi bi-arrow-right-circle-fill"></i>}
+            </div>
+        </div>
+            {blogsToRender.length>0?
+            
+            <div className="d-flex flex-wrap justify-content-center">
+                {blogsToRender.map((blog, index) => (
+                    <div key={index} className="d-flex flex-align-start justify-content-start align-items-center blogPreview" style={{border:"1px solid white", borderRadius:"18px"}}>
+                        <div className="d-flex flex-column justify-content-center align-items-center" >
+                            <p style={{color:"white"}}>{blog.news_site}</p>
+                            <img height={"auto"} width={"100px"} src={blog.image_url} alt="Blog image" />
+                        </div>
+                        <div className="d-flex flex-column" >
+                        <p style={{color:"white"}} >{blog.title}</p>
+                        <p style={{color:"white"}} >{blog.summary}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+            : <div className="p-5 m-5"><Spinner style={{color:"white"}} className="p-3"/></div>}
+    </div>
 
+: <div className="p-5 m-5"><Spinner style={{color:"white"}} className="p-3"/></div>}
         </>
     )
 }

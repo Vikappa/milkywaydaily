@@ -154,7 +154,10 @@ body{
   transform: scale(103%);
 }
 
-
 .dashBoardDivArticles{
+  width: 50%;
+}
+
+.blogPreview{
   width: 50%;
 }
