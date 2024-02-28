@@ -154,10 +154,27 @@ body{
   transform: scale(103%);
 }
 
+.newsProvider:hover{
+  color: var(--bs-SMWDTheme1) !important;
+  transition: all 0.25s ease;
+
+}
+
 .dashBoardDivArticles{
   width: 50%;
 }
-
 .blogPreview{
-  width: 50%;
+  width: 100%;
+}
+
+@media screen and (min-width: 796px) {
+  .blogPreview{
+    width: 45%;
+  }
+}
+
+@font-face {
+  font-family: 'nasalization';
+  src: local('nasalization'), url('./assets/nasalization-rg.otf') format('truetype');
+  font-weight: 400;
 }

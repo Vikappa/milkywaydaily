@@ -10,10 +10,12 @@ const HomePage = function HomePage() {
 
     const lastArticle: articleResult = useSelector((state: RootState) => state.articles.results[0])
     const articles: articleResult[] = useSelector((state: RootState) => state.articles.results)
+    const infos: string[] = useSelector(((state: RootState) => state.INFO.news_sites))
     const blogs: blogResult[] = useSelector((state: RootState) => state.blogs.results)
     const [blogsToRender, setBlogsToRender] = useState<blogResult[]>([])
     const blogWelcome: blogWelcome = useSelector((state: RootState) => state.blogs)
     const [currentBlogWelcome, setCurrentBlogWelcome] = useState<blogWelcome | null>(null)
+
 
     useEffect(() => {
         setCurrentBlogWelcome(blogWelcome)
@@ -73,7 +75,7 @@ const HomePage = function HomePage() {
             
             <div className="d-flex flex-wrap justify-content-center">
                 {blogsToRender.map((blog, index) => (
-                    <div key={index} className="d-flex flex-align-start justify-content-start align-items-center blogPreview" style={{border:"1px solid white", borderRadius:"18px"}}>
+                    <div key={index} className="d-flex flex-align-start justify-content-start blogPreview" style={{border:"1px solid white", borderRadius:"18px", margin:"0.3rem", padding:"0.5rem 1.5rem"}}>
                         <div className="d-flex flex-column justify-content-center align-items-center" >
                             <p style={{color:"white"}}>{blog.news_site}</p>
                             <img height={"auto"} width={"100px"} src={blog.image_url} alt="Blog image" />
@@ -88,6 +90,18 @@ const HomePage = function HomePage() {
             : <div className="p-5 m-5"><Spinner style={{color:"white"}} className="p-3"/></div>}
     </div>
 
+: <div className="p-5 m-5"><Spinner style={{color:"white"}} className="p-3"/></div>}
+
+{infos?
+<>
+<hr style={{color:"white", margin:"1.5rem 1rem 0 1rem"}}/>
+<h5  style={{color:"white", padding:"0.8rem 2rem", margin:"0"}}>Our news providers:</h5>
+<div className="d-flex flex-wrap" >
+{infos.map((info, index) => (
+        <p className="newsProvider" key={index} style={{color:"white", margin:"0", padding:"0.2rem 1.1rem", fontFamily:"nasalization"}}>{info}</p>
+))} 
+</div>
+</>
 : <div className="p-5 m-5"><Spinner style={{color:"white"}} className="p-3"/></div>}
         </>
     )
