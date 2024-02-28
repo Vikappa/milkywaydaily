@@ -47,9 +47,9 @@ const ArticleList = function () {
     }
 
     return (
-        <div style={{border:"1px solid white", borderRadius:"15px", margin:"1rem", padding:"0.2rem"}}>
+        <div className="articleListDashboard" style={{border:"2px solid white", borderRadius:"15px", margin:"1rem", padding:"0.2rem"}}>
             {articlesToRender.length > 0 ? (
-                <div style={{ width: "100%" }}>
+                <div style={{ minWidth: "100%" }}>
                     {articlesToRender.slice(1).map((article, index) => (
                         <Link key={index} to={`article/${article.id}`} className="articleLinkDashBoard d-flex justify-content-start align-items-center" style={{ border: "1px solid white", borderRadius: "15px", margin: "1rem", textDecoration: "none", color: "white" }}>
                             <img style={{ borderRadius: "15px" }} height={"40px"} src={article.image_url} alt="Article image" className="articlePreviewImageDashboard" />

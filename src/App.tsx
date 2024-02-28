@@ -11,6 +11,7 @@ import { fetchBlogs } from './redux/reducers/blogReducer'
 import { fetchInfo } from './redux/reducers/infoReducer'
 import HomePage from './components/HomePage'
 import ReportPage from './components/ReportPage'
+import ArticlePage from './components/ArticlePage'
 
 
 
@@ -33,6 +34,7 @@ function App() {
     <Routes>
       <Route path='/' element={<HomePage/>}/>
       <Route path='/report/:Id' element={<ReportPage/>}/>
+      <Route path='/article/:Id' element={<ArticlePage/>}/>
     </Routes>
     <Footer/>
     </BrowserRouter>

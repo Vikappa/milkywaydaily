@@ -37,8 +37,8 @@ const HomePage = function HomePage() {
     </div>
     
     : <div className="p-5 m-5"><Spinner style={{color:"white"}} className="p-3"/></div>}
-
-
+    
+    {}
 
 
         </>
