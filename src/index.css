@@ -125,6 +125,7 @@ body{
 
 .dashBoardDivLastArticle:hover{
   transform: scale(103%);
+  color: var(--bs-SMWDTheme1) !important;
 }
 
 .articleLinkDashBoard{

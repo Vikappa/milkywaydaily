@@ -23,7 +23,7 @@ const HomePage = function HomePage() {
         <div className="d-flex flex-column dashBoardDivLatestArticle">
         <p style={{color:"white", margin:"0", padding:"5px 15px 0 15px" }} >Latest article</p>
         <img style={{width:"100%", borderRadius:"15px", padding:"0.5rem"}} src={lastArticle.image_url} alt="Latest article image" className="articleImageDashboard" />
-        <h5 style={{color:"white", margin:"0", padding:"0 0.5rem 0.5rem 0.5rem"}}>{lastArticle.title}</h5>
+        <h5 className="dashBoardArticletext" style={{color:"white", margin:"0", padding:"0 0.5rem 0.5rem 0.5rem"}}>{lastArticle.title}</h5>
         <p style={{color:"white", fontSize:"0.78rem", padding:"0", margin:"0 0.3rem 0.3rem 0.3rem"}}>{lastArticle.summary}</p>
         <p style={{color:"white", margin:"0 0.7rem"}}>Read more</p>
         </div>
