@@ -1,4 +1,4 @@
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import NavBar from './components/NavBar'
 import Footer from './components/Footer'
@@ -9,6 +9,8 @@ import { fetchReports } from './redux/reducers/reportReducer'
 import { fetchArticles } from './redux/reducers/articleReducer'
 import { fetchBlogs } from './redux/reducers/blogReducer'
 import { fetchInfo } from './redux/reducers/infoReducer'
+import HomePage from './components/HomePage'
+import ReportPage from './components/ReportPage'
 
 
 
@@ -28,6 +30,10 @@ function App() {
     <BrowserRouter>
     <NavBar/>
     <ReportMarque/>
+    <Routes>
+      <Route path='/' element={<HomePage/>}/>
+      <Route path='/report/:Id' element={<ReportPage/>}/>
+    </Routes>
     <Footer/>
     </BrowserRouter>
     
