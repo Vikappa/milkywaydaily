@@ -9,7 +9,6 @@ function formatIsoDate(isoDate:string) {
     const date = new Date(isoDate)
   
     const options: Intl.DateTimeFormatOptions = { 
-      weekday: 'long', 
       year: 'numeric', 
       month: 'long', 
       day: 'numeric' 
@@ -56,12 +55,15 @@ const ArticlePage = function () {
         {currentArticle?  
 
         <div style={{border:"1px solid white", borderRadius:"10px", margin:"1rem", padding:"0.2rem 0.5rem 0.5rem 0.5rem", width:"auto"}}>
-            <p style={{color:"white", margin:"0.5rem 1rem", fontSize:"0.8rem"}}>Aggiornato: {formatIsoDate(currentArticle.updated_at)}</p>
+            <p style={{color:"white", margin:"0.2rem 0.5rem", fontSize:"0.8rem"}}>Aggiornato: {formatIsoDate(currentArticle.updated_at)}</p>
             <h2 style={{color:"white", textAlign:"center"}}>{currentArticle.title}</h2>
-            <img src={currentArticle.image_url} alt="Article image" style={{width:"100%"}}/>
+            <div className="container-fluid m-0 p-0 d-flex">
+            <img src={currentArticle.image_url} alt="Article image" style={{width:"auto", maxWidth:"100%", margin:"0 auto"}}/>
+
+            </div>
             <p style={{color:"white", marginTop:"10px"}}>{currentArticle.summary}</p>
             <div className="d-flex flex-nowrap justify-content-center gap-2">
-            <p style={{color:"white"}}>Read more on </p>
+            <p style={{color:"white", textWrap:"nowrap"}}>Read more on </p>
             <a className="linkToNewsSite" href={currentArticle.url} target="_blank" rel="noreferrer">{currentArticle.news_site}</a>
             </div>
         </div>
