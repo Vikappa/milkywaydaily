@@ -10,12 +10,12 @@
 </h1>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React"/>
-  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"/>
-  <img src="https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white" alt="Redux"/>
-  <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap"/>
-  <img src="https://img.shields.io/badge/JSON-000000?style=for-the-badge&logo=json&logoColor=white" alt="JSON"/>
-  <img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white" alt="React Router"/>
+  <img src="https://img.icons8.com/color/48/000000/react-native.png" alt="React"/>
+  <img src="./public/Typescript_logo_2020.svg.png" height="38px" alt="TypeScript"/>
+  <img src="https://img.icons8.com/color/48/000000/redux.png" alt="Redux"/>
+  <img src="https://img.icons8.com/color/48/000000/bootstrap.png" alt="Bootstrap"/>
+  <img src="https://img.icons8.com/color/48/000000/json--v1.png" alt="JSON"/>
+  <img src="./public/react-router-mark-color-inverted.png" height="38px" alt="React Router"/>
 </p>
 
 ## La Genesi del Progetto
