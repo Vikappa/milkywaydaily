@@ -22,9 +22,6 @@ function formatIsoDate(isoDate:string) {
     return formatter.format(date)
   }
 
-  
-  
-
 const ReportPage = function ReportPage() {
     const reports: reportResult[] = useSelector((state: RootState) => state.reports.results)
     const location = useLocation()

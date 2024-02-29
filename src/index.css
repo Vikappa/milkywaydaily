@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'nasalization';
+  src: local('nasalization'), url('./assets/nasalization-rg.otf') format('truetype');
+  font-weight: 400;
+}
+
 html{
   margin: 0;
 padding: 0;
@@ -157,24 +163,33 @@ body{
 .newsProvider:hover{
   color: var(--bs-SMWDTheme1) !important;
   transition: all 0.25s ease;
-
 }
 
 .dashBoardDivArticles{
   width: 50%;
 }
+
 .blogPreview{
   width: 100%;
 }
 
-@media screen and (min-width: 796px) {
+.blogPreview:hover{
+  transform: scale(103%);
+  transition: all 0.5s ease;
+}
+
+
+@media screen and (min-width: 768px) {
   .blogPreview{
-    width: 45%;
+    width: 48%;
   }
 }
 
-@font-face {
-  font-family: 'nasalization';
-  src: local('nasalization'), url('./assets/nasalization-rg.otf') format('truetype');
-  font-weight: 400;
+
+
+@media screen and (min-width: 992px) {
+  .blogPreview{
+    width: 30%;
+  }
 }
+
