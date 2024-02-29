@@ -94,16 +94,14 @@ const HomePage = function HomePage() {
             
             <div className="d-flex flex-wrap justify-content-center">
                 {blogsToRender.map((blog, index) => (
-                    <Link to={`/blog/${blog.id}`} key={index} className="d-flex flex-column flex-md-row blogPreview gap-1" style={{border:"1px solid white", borderRadius:"18px", margin:"0.3rem", padding:"0.3rem 0.5rem", textDecoration:"none"}}>
-                        <div className="d-flex flex-column justify-content-between gap-2" style={{border:"1px solid white", borderRadius:"10px", margin:"0 0.2rem 0 0.2rem", padding:"0 0.1rem 0 0.1rem"}} >
-                            <p style={{color:"white", margin:"0 0 8px 0", textAlign:"center", fontWeight:"700", fontSize:"1.2rem"}} className="" >{blog.news_site}</p>
+                    <Link to={`/blog/${blog.id}`} key={index} className="d-flex flex-md-row justify-content-evenly blogPreview" style={{border:"1px solid white", borderRadius:"18px", margin:"0.3rem", padding:"0.3rem 0.5rem", textDecoration:"none"}}>
+                            <div className="d-flex flex-column justify-content-center mx-3">
                             <img height={"auto"} width={"120px"} src={blog.image_url} alt="Blog image" className="mx-auto rounded-2" />
-                            <div></div>
-                        </div>
-                        <div className="d-flex flex-column justify-content-evenly" >
-                        <p className="text-center" style={{color:"white", fontWeight:"700"}} >{blog.title}</p>
-                        <p style={{color:"white"}} >{blog.summary}</p>
-                        </div>
+                            </div>
+                            <div className="d-flex flex-column justify-content-center mx-3">
+                            <p style={{color:"white", margin:"0 0 8px 0", textAlign:"center", fontWeight:"700", fontSize:"1.2rem"}} className="" >{blog.news_site}</p>
+                            <p className="text-center" style={{color:"white", fontWeight:"700"}} >{blog.title}</p>
+                            </div>
                     </Link>
                 ))}
             </div>

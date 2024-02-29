@@ -38,7 +38,7 @@ const BlogPage = function(){
                     setCurrentBlog(foundBlog)
                 } else {
                     try {
-                        const response = await fetch(`https://api.spaceflightnewsapi.net/v4/articles/${blogId}`)
+                        const response = await fetch(`https://api.spaceflightnewsapi.net/v4/blogs/${blogId}`)
                         const data = await response.json()
                         setCurrentBlog(data)
                     } catch (error) {
