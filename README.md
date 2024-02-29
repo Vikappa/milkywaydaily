@@ -1,8 +1,8 @@
 # Milky Way Daily
 
 <p align="center">
-  <img src="https://img.shields.io/badge/status-COMPLETE-green?style=for-the-badge" alt="Status: Complete">
-  <img src="https://img.shields.io/badge/version-1.0.0-blue?style=for-the-badge" alt="Version: 1.0.0">
+  <img src="https://img.shields.io/badge/status-COMPLETE-green" alt="Status: Complete">
+  <img src="https://img.shields.io/badge/version-1.0.0-blue" alt="Version: 1.0.0">
 </p>
 
 <h1 align="center">
