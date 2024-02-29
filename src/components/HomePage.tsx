@@ -20,15 +20,34 @@ const HomePage = function HomePage() {
     useEffect(() => {
         setCurrentBlogWelcome(blogWelcome)
         setBlogsToRender(blogWelcome.results)
-    }, [blogs, currentBlogWelcome])
+    }, [blogs])
 
 
     const fetchPreviousBlog = async () => {
-        console.log()
-    }
+        if (currentBlogWelcome) {
+            try {
+                const response = await fetch(currentBlogWelcome.previous)
+                const data = await response.json()
+                console.log(data.results)
+                setBlogsToRender(data.results)
+                setCurrentBlogWelcome(data)
+            } catch (error) {
+                console.log("Errore fetch ", error)
+            }
+        }       }
     
     const fetchNextBlogs = async () => {
-        console.log()
+        if (currentBlogWelcome) {
+            try {
+                const response = await fetch(currentBlogWelcome.next)
+                const data = await response.json()
+                console.log(data.results)
+                setBlogsToRender(data.results)
+                setCurrentBlogWelcome(data)
+            } catch (error) {
+                console.log("Errore fetch ", error)
+            }
+        }   
     }
 
     return(
